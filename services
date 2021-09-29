@@ -1,0 +1,194 @@
+{
+	"info": {
+		"_postman_id": "ba9aea97-7258-47a1-ba03-81ed2683371f",
+		"name": "Test Laravel",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"angelinfanti@gmail.com\",\r\n    \"password\": \"01105579\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/user/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Angel Infanti\",\r\n    \"email\": \"angelinfanti@gmail.com\",\r\n    \"password\": \"01105579\",\r\n    \"confirm_password\": \"01105579\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/user/register",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addCustomers",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNjNlNjhlNzg1ODNlYWY0MTI0NWQ3NWZlODZiMGY0N2RiYWNlOTdhODEwMzRmZmFkNjM1NzkwMTQ4MzQ5OWVkYWQzYjM3ZGUzMjZiMDAxZGYiLCJpYXQiOjE2MzI4MDQxMzEuODc0NDQ3LCJuYmYiOjE2MzI4MDQxMzEuODc0NDUxLCJleHAiOjE2NjQzNDAxMzEuODY4ODUxLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.mZOSu_7saViAfjbKoAd9s-_1ZuMpUZwZgzS70XBTu2r9ZHdHMa2dThWZ_wqHKg4smlTtTJvHLmAo3jUn_LBnC4n3CSVHb4qRTPsTjeKmSVfCU6RPg1zCIkLS1kAvBEWsOJqLYhoRw5iWcFiPs_uG5SHbK7OVkj2SDylG-7FUz1pn-reruY31qQjXkQeDRZHulFKCxgQSiFzk7Dst8O45nA3QehNhKkHOdcF7uzsgRtWYxE75KQay5VFXISauBOL6rW6NJrnjP1185Ky332B2Sr-x5YWcasqlSsMyBldLuZrUsWkG0DIPH5gSK2xe7AWBEnEI36vJARS15huu9i_pNTasbI8PCVQ6L_8odC0wq2eFlLN5y7vn4HerdtEpbMP_NJ0WonWO9-VF4z6gYA2W-8rViT12VbbWy5Lh8_KYcfDIPBoi1hyH0Yuf0nr7JrIiSwT9glCUHc2udvrTvVyDOtAdXL5VZLdLrfED1ux7amYrzh8jDYScWEQGTt17gxXTmgXtMDgkNqIiQTaXSnPGz9kZYhOabgfCPJqDsiD3FFMd0cUeaj3B0dp0euQxz6rWOTmuNm6yFiHeCvaEay8mbWyOvTe7jskNGbHfUseNXBLRinhvmtihE9rWIWGft_o20Lc5w1fLl7f6Ev1QsjhRq6YykgREFxJK4P6JHhbiYF8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"dni\": \"24901946\",\r\n    \"id_reg\": 1,\r\n    \"id_com\":1,\r\n    \"email\": \"angelinfanti@gmail.com\",\r\n    \"name\": \"Angel\",\r\n    \"last_name\": \"Infanti\",\r\n    \"status\": \"A\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "s",
+					"host": [
+						"s"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteCustomers",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNjNlNjhlNzg1ODNlYWY0MTI0NWQ3NWZlODZiMGY0N2RiYWNlOTdhODEwMzRmZmFkNjM1NzkwMTQ4MzQ5OWVkYWQzYjM3ZGUzMjZiMDAxZGYiLCJpYXQiOjE2MzI4MDQxMzEuODc0NDQ3LCJuYmYiOjE2MzI4MDQxMzEuODc0NDUxLCJleHAiOjE2NjQzNDAxMzEuODY4ODUxLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.mZOSu_7saViAfjbKoAd9s-_1ZuMpUZwZgzS70XBTu2r9ZHdHMa2dThWZ_wqHKg4smlTtTJvHLmAo3jUn_LBnC4n3CSVHb4qRTPsTjeKmSVfCU6RPg1zCIkLS1kAvBEWsOJqLYhoRw5iWcFiPs_uG5SHbK7OVkj2SDylG-7FUz1pn-reruY31qQjXkQeDRZHulFKCxgQSiFzk7Dst8O45nA3QehNhKkHOdcF7uzsgRtWYxE75KQay5VFXISauBOL6rW6NJrnjP1185Ky332B2Sr-x5YWcasqlSsMyBldLuZrUsWkG0DIPH5gSK2xe7AWBEnEI36vJARS15huu9i_pNTasbI8PCVQ6L_8odC0wq2eFlLN5y7vn4HerdtEpbMP_NJ0WonWO9-VF4z6gYA2W-8rViT12VbbWy5Lh8_KYcfDIPBoi1hyH0Yuf0nr7JrIiSwT9glCUHc2udvrTvVyDOtAdXL5VZLdLrfED1ux7amYrzh8jDYScWEQGTt17gxXTmgXtMDgkNqIiQTaXSnPGz9kZYhOabgfCPJqDsiD3FFMd0cUeaj3B0dp0euQxz6rWOTmuNm6yFiHeCvaEay8mbWyOvTe7jskNGbHfUseNXBLRinhvmtihE9rWIWGft_o20Lc5w1fLl7f6Ev1QsjhRq6YykgREFxJK4P6JHhbiYF8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"dni\": \"24901946\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/customer/softDelete",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"customer",
+						"softDelete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "searchCustomer",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNjNlNjhlNzg1ODNlYWY0MTI0NWQ3NWZlODZiMGY0N2RiYWNlOTdhODEwMzRmZmFkNjM1NzkwMTQ4MzQ5OWVkYWQzYjM3ZGUzMjZiMDAxZGYiLCJpYXQiOjE2MzI4MDQxMzEuODc0NDQ3LCJuYmYiOjE2MzI4MDQxMzEuODc0NDUxLCJleHAiOjE2NjQzNDAxMzEuODY4ODUxLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.mZOSu_7saViAfjbKoAd9s-_1ZuMpUZwZgzS70XBTu2r9ZHdHMa2dThWZ_wqHKg4smlTtTJvHLmAo3jUn_LBnC4n3CSVHb4qRTPsTjeKmSVfCU6RPg1zCIkLS1kAvBEWsOJqLYhoRw5iWcFiPs_uG5SHbK7OVkj2SDylG-7FUz1pn-reruY31qQjXkQeDRZHulFKCxgQSiFzk7Dst8O45nA3QehNhKkHOdcF7uzsgRtWYxE75KQay5VFXISauBOL6rW6NJrnjP1185Ky332B2Sr-x5YWcasqlSsMyBldLuZrUsWkG0DIPH5gSK2xe7AWBEnEI36vJARS15huu9i_pNTasbI8PCVQ6L_8odC0wq2eFlLN5y7vn4HerdtEpbMP_NJ0WonWO9-VF4z6gYA2W-8rViT12VbbWy5Lh8_KYcfDIPBoi1hyH0Yuf0nr7JrIiSwT9glCUHc2udvrTvVyDOtAdXL5VZLdLrfED1ux7amYrzh8jDYScWEQGTt17gxXTmgXtMDgkNqIiQTaXSnPGz9kZYhOabgfCPJqDsiD3FFMd0cUeaj3B0dp0euQxz6rWOTmuNm6yFiHeCvaEay8mbWyOvTe7jskNGbHfUseNXBLRinhvmtihE9rWIWGft_o20Lc5w1fLl7f6Ev1QsjhRq6YykgREFxJK4P6JHhbiYF8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"angelinfanti@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/customer/searchCustomers",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"customer",
+						"searchCustomers"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

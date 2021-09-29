@@ -34,6 +34,8 @@ class Customers extends Authenticatable{
 
     public $primaryKey  = 'dni';
 
+    public $incrementing = false;
+
     public $timestamps = false;
 
     public function communes(){

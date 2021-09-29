@@ -11,11 +11,20 @@ class CreateCommunesTable extends Migration
      *
      * @return void
      */
+    public function id($column = 'id_com'){
+        return $this->increments($column);
+    }
+
     public function up()
     {
         Schema::create('communes', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->integer('id_reg')->length(10)->unsigned;
+            $table->string('description', 45);
+            $table->foreign('id_reg')
+                ->references('id_reg')
+                ->on('regions')
+                ->onDelete('cascade');
         });
     }
 

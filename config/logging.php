@@ -54,6 +54,10 @@ return [
             'days' => 14,
         ],
 
+        'database' => [
+            'enabled' => env('LOG_DATABASE', false),
+        ],
+
         'slack' => [
             'driver' => 'slack',
             'url' => env('LOG_SLACK_WEBHOOK_URL'),

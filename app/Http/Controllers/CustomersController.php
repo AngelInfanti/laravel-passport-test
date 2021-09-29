@@ -7,12 +7,13 @@ use App\Models\Regions;
 use App\Models\Communes;
 use App\Models\Customers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Symfony\Component\Console\Input\Input;
 
 class CustomersController extends Controller
 {
     public function add(Request $request){
-        //$validator = Validator::make(Input::only(['username', 'password', 'type']), [
+        Log::stack(['slack', 'single'])->info("Se esta creando un Customer");
 
         $commune = Communes::where(
             'id_com', $request->id_com
@@ -36,6 +37,7 @@ class CustomersController extends Controller
         ]);
 
         if ($validator->fails()) {
+            Log::stack(['slack', 'single'])->info($validator->errors());
             return response()->json([
                 'error'=>$validator->errors(),
                 "success" => false
@@ -45,7 +47,7 @@ class CustomersController extends Controller
         $input = $request->all();
         $input['date_reg'] = date('Y-m-d H:i');
         $customer = Customers::create($input);
-
+        Log::stack(['slack', 'single'])->info("Se creo un Customer: $customer");
         return response()->json(
             [
             'customer' => $customer,
@@ -54,6 +56,7 @@ class CustomersController extends Controller
     }
 
     public function delete(Request $request){
+        Log::stack(['slack', 'single'])->info("Se eliminara un Customer");
         $validator = Validator::make($request->all(), [
             'dni' => 'required|exists:customers,dni'
         ]);
@@ -68,6 +71,7 @@ class CustomersController extends Controller
         $customer = Customers::where('dni', $request->dni)->first();
 
         if($customer->status == "trash"){
+            Log::stack(['slack', 'single'])->info("Error Registro no existe");
             return response()->json([
                 'error'=> 'Registro no existe',
                 "success" => false
@@ -76,7 +80,7 @@ class CustomersController extends Controller
 
         $customer->status = 'trash';
         $customer->save();
-
+        Log::stack(['slack', 'single'])->info("Customer Eliminado");
         return response()->json(
             [
             'customer' => "Customer Eliminado",
@@ -85,8 +89,9 @@ class CustomersController extends Controller
     }
 
     public function search(Request $request){
-
+        Log::stack(['slack', 'single'])->info("Buscando Customer");
         if($request->email == null && $request->dni == null){
+            Log::stack(['slack', 'single'])->info("Error Se necesita al menos un dato: email o dni");
             return response()->json([
                 'error'=> 'Se necesita al menos un dato: email o dni',
                 "success" => false
@@ -117,7 +122,7 @@ class CustomersController extends Controller
             'id_com', $customer->id_com
         )->first();
 
-
+        Log::stack(['slack', 'single'])->info("El customer se consulto con exito");
 
         return response()->json(
             [
