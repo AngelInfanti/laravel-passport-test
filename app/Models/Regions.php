@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Regions extends Model
 {
     use HasFactory;
+
+    public $primaryKey  = 'id_reg';
 }
